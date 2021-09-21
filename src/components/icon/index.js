@@ -7,6 +7,8 @@ import {
   IconFieldActive,
   IconUser,
   IconUserActive,
+  IconDefaultUser,
+  IconStadion,
 } from '../../assets';
 const Icon = props => {
   const {label, isFocused} = props;
@@ -17,6 +19,10 @@ const Icon = props => {
       return isFocused ? <IconFieldActive /> : <IconField />;
     case 'Akunt':
       return isFocused ? <IconUserActive /> : <IconUser />;
+    case 'Default User':
+      return <IconDefaultUser />;
+    case 'Stadion':
+      return <IconStadion />;
     default:
       return <IconHome />;
   }
