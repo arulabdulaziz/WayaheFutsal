@@ -9,6 +9,9 @@ import {
   IconUserActive,
   IconDefaultUser,
   IconStadion,
+  IconSubscribe,
+  IconBooking,
+  IconJoinTeam
 } from '../../assets';
 const Icon = props => {
   const {label, isFocused} = props;
@@ -23,6 +26,12 @@ const Icon = props => {
       return <IconDefaultUser />;
     case 'Stadion':
       return <IconStadion />;
+    case 'Subscribe':
+      return <IconSubscribe />;
+    case 'Booking':
+      return <IconBooking />;
+    case 'Join Team':
+      return <IconJoinTeam />;
     default:
       return <IconHome />;
   }
