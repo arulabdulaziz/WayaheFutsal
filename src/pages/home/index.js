@@ -12,6 +12,7 @@ import {ImageBanner} from '../../assets';
 import Service from '../../components/service';
 import SmallButton from '../../components/small-button';
 import BoxClub from '../../components/box-club';
+import UpdateScore from '../../components/update-score';
 const Home = () => {
   const [service, setService] = useState('Booking');
   return (
@@ -51,14 +52,49 @@ const Home = () => {
           </Text>
           <SmallButton text="Lihat Semua" />
         </View>
-        <ScrollView showsHorizontalScrollIndicator={false} style={styles.logos} horizontal>
-          <View style={styles.club}>
+        <View style={styles.club}>
+          <ScrollView
+            showsHorizontalScrollIndicator={false}
+            style={styles.logos}
+            horizontal>
             <BoxClub club="Vamos FC" statistic="WWDDDL" />
             <BoxClub club="VE FC" statistic="WWDDDL" />
             <BoxClub club="An Nahl Fa" statistic="WWDDDL" />
             <BoxClub club="Arsyil FC" statistic="WWDDDL" />
             <BoxClub club="Awang Long FA" statistic="WWDDDL" />
             <BoxClub club="Bogor FC" statistic="WWDDDL" />
+          </ScrollView>
+        </View>
+        <View style={styles.labelSparring}>
+          <Text style={styles.label}>Update Score</Text>
+          <SmallButton text="Lihat Semua" />
+        </View>
+        <ScrollView
+          showsHorizontalScrollIndicator={false}
+          style={styles.logos}
+          horizontal>
+          <View style={styles.score}>
+            <UpdateScore
+              club1="An Nahl Fa"
+              club2="Vamos FC"
+              score1={5}
+              score2={2}
+              date={'Rabu, 22 September 2021'}
+            />
+            <UpdateScore
+              club1="Awang Long FA"
+              club2="Bogor FC"
+              score1={5}
+              score2={2}
+              date={'Kamis, 23 September 2021'}
+            />
+            <UpdateScore
+              club1="Arsyil FC"
+              club2="VE FC"
+              score1={5}
+              score2={2}
+              date={'Jumat, 24 September 2021'}
+            />
           </View>
         </ScrollView>
       </View>
@@ -114,10 +150,15 @@ const styles = StyleSheet.create({
   },
   club: {
     flexDirection: 'row',
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
     marginTop: 10,
   },
   logos: {
     marginHorizontal: 30,
-  }
+  },
+  score: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
 });
